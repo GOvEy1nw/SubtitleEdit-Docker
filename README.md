@@ -1,4 +1,4 @@
-# subtitle-convert-docker
+# SubtitleEdit-Docker
   Docker container for subtitle conversion, using Subtitle Edit.   
 
 ## Introduction
@@ -13,13 +13,15 @@ _(For formats supported by ffmpeg, consider using it as an alternative: https://
 
 This project is inspired by and builds upon discussions in the community, such as this thread: https://github.com/SubtitleEdit/subtitleedit/issues/3568 Thanks @batatop
 
-## Usage
+## Build
+
+docker buildx build --platform=linux/amd64 -t username/repo:tag --push .
 
 ### Convert subtitles
 
 General reference:   
 https://www.nikse.dk/subtitleedit/help#commandline
 
-#### Basic usage
+#### Example usage
 
- TBA
+docker run --rm -v /path/to/Subtitles:/input/ -v /path/to/Output:/output/ GovEy1nw/SubtitleEdit-Docker:latest /convert "/input/file.srt" subrip /profile:NetflixEN /FixCommonErrors /MergeShortLines /BalanceLines /overwrite /outputfolder:"/output/"
