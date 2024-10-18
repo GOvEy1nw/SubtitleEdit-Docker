@@ -1,5 +1,5 @@
 FROM ubuntu:22.04
-LABEL maintainer="Wauter De Bruyne"
+LABEL maintainer="GOvEy1nw"
 
 
 RUN apt-get update
